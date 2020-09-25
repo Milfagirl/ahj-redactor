@@ -52,14 +52,12 @@ buttonReset.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   e.preventDefault();
   if (e.target.id === 'edit') {
-    
     const tr = e.target.closest('tr');
     modalAdd(title);
     data.getDataBase.forEach((el) => {
       console.log(el.id);
       console.log(tr.dataset.id);
       if (el.id === Number(tr.dataset.id)) {
-        console.log(el.id === Number(tr.dataset.id), el);
         inputname.value = el.name;
         inputprice.value = el.price;
         data.getDataEvent = ['edit', el.id];
@@ -68,7 +66,17 @@ document.addEventListener('click', (e) => {
 
   };
   if (e.target.id === 'delete'){
-    console.log(e.target.dataset.id);
+    const tr = e.target.closest('tr');
+    data.getDataBase.forEach((el) => {
+      console.log(el.id);
+      console.log(tr.dataset.id);
+      if (el.id === Number(tr.dataset.id)) {
+        data.change(el, 'delete');
+      };
+      console.log(data.getDataBase);
+    });
+    redraw();
+
   };
 
 

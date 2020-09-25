@@ -35,10 +35,16 @@ export default class Data {
         this.getDataBase = data;
       });
     };
-        if (method === 'delete') {
-            const data = this.getDataBase;
-            const index = data.indexOf(value);
-            this.getDataBase = data.slice(index,1);
+    if (method === 'delete') {
+      const data = this.getDataBase;
+      let index = 0;
+      data.forEach((element) => {
+        if (element.id === value.id) {
+          index = data.indexOf(element);
+        }
+       });
+      data.splice(index, 1);
+      this.getDataBase = data;
     }
 }
 }
