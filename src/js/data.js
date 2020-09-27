@@ -1,12 +1,14 @@
+/* eslint-disable no-param-reassign */
 export default class Data {
   constructor(array) {
     this.dataBase = array;
-    this.dataEvent = [];  
-  };
+    this.dataEvent = [];
+  }
 
   set getDataBase(value) {
     this.dataBase = value;
   }
+
   get getDataBase() {
     return this.dataBase;
   }
@@ -14,6 +16,7 @@ export default class Data {
   set getDataEvent(value) {
     this.dataEvent = value;
   }
+
   get getDataEvent() {
     return this.dataEvent;
   }
@@ -24,17 +27,17 @@ export default class Data {
       database.push(value);
       this.getDataBase = database;
       console.log(this.getDataBase);
-    };
+    }
     if (method === 'edit') {
       const data = this.getDataBase;
       data.forEach((element) => {
         if (element.id === value.id) {
           element.name = value.name;
-          element.price = value.price;
+          element.price = Number(value.price);
         }
         this.getDataBase = data;
       });
-    };
+    }
     if (method === 'delete') {
       const data = this.getDataBase;
       let index = 0;
@@ -42,12 +45,9 @@ export default class Data {
         if (element.id === value.id) {
           index = data.indexOf(element);
         }
-       });
+      });
       data.splice(index, 1);
       this.getDataBase = data;
     }
+  }
 }
-}
-
-
-

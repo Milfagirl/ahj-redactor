@@ -58,6 +58,7 @@ td:last-child {
     border-radius: 10px;
     border: 1px solid grey;
     height: 35px;
+    position: relative;
 }
 .modal_add div {
     margin-top: 20px;
@@ -69,4 +70,12 @@ td:last-child {
     border-radius: 10px;
     width: 100px;
     
+}
+.validity {
+   position: absolute;
+   width: 200px;
+   border: 1px solid blue;
+   position: absolute;
+   box-sizing: border-box;
+   background-color: rgb(250, 238, 74);
 }
