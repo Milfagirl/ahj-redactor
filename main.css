@@ -1,0 +1,82 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    box-sizing: border-box;
+    width: calc(100% / 2);
+    position: relative;
+}
+table {
+    border-collapse: collapse; /*убираем пустые промежутки между ячейками*/
+    width: 100%;
+    border: 1px solid gray;
+    margin-top: 10px;
+}
+
+td, th {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+td:first-child {
+    width: 50%;
+}
+td:last-child {
+    width: 20%;
+}
+.delete {
+    margin-left: 10px;
+}
+.edit, .delete, .add {
+    border: none;
+    background-color: none;
+}
+.modal_add {
+    border: 1px solid grey;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    display: none;
+    height: 228px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.modal_add h3 {
+    margin: 10px 0;
+
+}
+.modal_add input {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 1px solid grey;
+    height: 35px;
+    position: relative;
+}
+.modal_add div {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.modal_add button {
+    border-radius: 10px;
+    width: 100px;
+    
+}
+.validity {
+   position: absolute;
+   width: 200px;
+   border: 1px solid blue;
+   position: absolute;
+   box-sizing: border-box;
+   background-color: rgb(250, 238, 74);
+}
+
